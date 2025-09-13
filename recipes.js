@@ -6,9 +6,9 @@ const recipes = [
     originalAlcohol: 3,
     cookingtime: 5,
     distillruns: 0,
-    age: 3,
+    age: 1,
     wood: 0,
-    difficulty: 2,
+    difficulty: 1,
     variations: [
       {
         name: "Кислый Квас",
@@ -931,3 +931,4 @@ const recipes = [
     ]
   }
 ];
+
