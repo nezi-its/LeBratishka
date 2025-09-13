@@ -29,8 +29,11 @@ modal.innerHTML = `
     <p><strong>Эффекты:</strong></p>
     <ul id="modal-effects" class="effects-list"></ul>
     <p><strong>Время варки:</strong> <span id="modal-cookingtime"></span> мин</p>
+    <p><strong>Количество перегонок:</strong> <span id="modal-distillruns"></span></p>
+    <p><strong>Время перегонки:</strong> <span id="modal-distilltime"></span></p>
     <p><strong>Время выдержки:</strong> <span id="modal-age"></span> дней</p>
     <p><strong>Тип бочки:</strong> <span id="modal-wood"></span></p>
+    <p><strong>Сложность:</strong> <span id="modal-difficulty"></span></p>
     <div class="card-navigation modal-navigation">
       <button class="nav-button nav-left" id="modal-nav-left" aria-label="Предыдущий вариант">←</button>
       <button class="nav-button nav-right" id="modal-nav-right" aria-label="Следующий вариант">→</button>
@@ -55,6 +58,22 @@ modal.addEventListener("click", (event) => {
   }
 });
 
+const woodTypeMap = {
+  0: 'Без бочки',
+  1: 'Дубовая',
+  2: 'Берёзовая',
+  3: 'Еловая',
+  4: 'Тропическая',
+  5: 'Акациевая',
+  6: 'Тёмно-дубовая',
+  // Добавьте другие типы дерева, если они будут использоваться в будущем
+  // 7: 'Багровая',
+  // 8: 'Искаженная',
+  // 9: 'Мангровая',
+  // 10: 'Вишневая',
+  // 11: 'Бамбуковая'
+};
+
 let currentModalDrinkFamily = null;
 let currentModalVariationIndex = 0;
 
@@ -70,8 +89,17 @@ function updateCardContent(cardElement, drinkFamily, variationIndex) {
   effectsList.innerHTML = variation.effects.map(e => `<li>${e}</li>`).join("");
 
   cardElement.querySelector('.card-cookingtime').textContent = `Время варки: ${drinkFamily.cookingtime} мин`;
+  cardElement.querySelector('.card-distillruns').textContent = `Количество перегонок: ${drinkFamily.distillruns}`;
+  const distillTimeElement = cardElement.querySelector('.card-distilltime');
+  if (drinkFamily.distilltime && drinkFamily.distilltime > 0) {
+    distillTimeElement.textContent = `Время перегонки: ${drinkFamily.distilltime} сек`;
+    distillTimeElement.style.display = 'block';
+  } else {
+    distillTimeElement.style.display = 'none';
+  }
   cardElement.querySelector('.card-age').textContent = `Время выдержки: ${drinkFamily.age} дней`;
-  cardElement.querySelector('.card-wood').textContent = `Тип бочки: ${drinkFamily.wood === 0 ? 'Без бочки' : drinkFamily.wood}`;
+  cardElement.querySelector('.card-wood').textContent = `Тип бочки: ${woodTypeMap[drinkFamily.wood] || drinkFamily.wood}`;
+  cardElement.querySelector('.card-difficulty').textContent = `Сложность: ${drinkFamily.difficulty}`;
 
   cardElement.dataset.currentVariation = variationIndex;
 
@@ -95,8 +123,17 @@ function updateModalContent(drinkFamily, variationIndex) {
   document.getElementById("modal-type").textContent = drinkFamily.type;
   document.getElementById("modal-alcohol").textContent = variation.alcohol;
   document.getElementById("modal-cookingtime").textContent = drinkFamily.cookingtime;
+  document.getElementById("modal-distillruns").textContent = drinkFamily.distillruns;
+  const modalDistillTime = document.getElementById("modal-distilltime");
+  if (drinkFamily.distilltime && drinkFamily.distilltime > 0) {
+    modalDistillTime.textContent = `${drinkFamily.distilltime} сек`;
+    modalDistillTime.parentElement.style.display = 'block';
+  } else {
+    modalDistillTime.parentElement.style.display = 'none';
+  }
   document.getElementById("modal-age").textContent = drinkFamily.age;
-  document.getElementById("modal-wood").textContent = drinkFamily.wood === 0 ? 'Без бочки' : drinkFamily.wood;
+  document.getElementById("modal-wood").textContent = woodTypeMap[drinkFamily.wood] || drinkFamily.wood;
+  document.getElementById("modal-difficulty").textContent = drinkFamily.difficulty;
 
   const modalIngredientsList = document.getElementById("modal-ingredients");
   modalIngredientsList.innerHTML = variation.ingredients.map(i => `<li>${i}</li>`).join("");
@@ -182,8 +219,11 @@ function renderRecipes(type = "all") {
         <p><strong>Эффекты:</strong></p>
         <ul class="effects-list">${initialCardVariation.effects.map(e => `<li>${e}</li>`).join("")}</ul>
         <p class="card-cookingtime"><strong>Время варки:</strong> ${drinkFamily.cookingtime} мин</p>
+        <p class="card-distillruns"><strong>Количество перегонок:</strong> ${drinkFamily.distillruns}</p>
+        <p class="card-distilltime" style="display: ${drinkFamily.distilltime && drinkFamily.distilltime > 0 ? 'block' : 'none'}"><strong>Время перегонки:</strong> ${drinkFamily.distilltime || ''} сек</p>
         <p class="card-age"><strong>Время выдержки:</strong> ${drinkFamily.age} дней</p>
-        <p class="card-wood"><strong>Тип бочки:</strong> ${drinkFamily.wood === 0 ? 'Без бочки' : drinkFamily.wood}</p>
+        <p class="card-wood"><strong>Тип бочки:</strong> ${woodTypeMap[drinkFamily.wood] || drinkFamily.wood}</p>
+        <p class="card-difficulty"><strong>Сложность:</strong> ${drinkFamily.difficulty}</p>
       </div>
       ${showNavigation ? `
       <div class="card-navigation">
