@@ -5,8 +5,10 @@ const recipes = [
     icon: "icons/kvas.png",
     originalAlcohol: 3,
     cookingtime: 5,
+    distillruns: 0,
     age: 3,
     wood: 0,
+    difficulty: 2,
     variations: [
       {
         name: "Кислый Квас",
@@ -34,8 +36,10 @@ const recipes = [
     icon: "icons/soup.png",
     originalAlcohol: 0,
     cookingtime: 6,
+    distillruns: 0,
     age: 1,
     wood: 0,
+    difficulty: 2,
     variations: [
       {
         name: "Жидкая Баланда",
@@ -63,8 +67,10 @@ const recipes = [
     icon: "icons/apple_smoothie.png",
     originalAlcohol: 0,
     cookingtime: 2,
+    distillruns: 0,
     age: 0,
     wood: 0,
+    difficulty: 1,
     variations: [
       {
         name: "Кислый Яблочный Смузи",
@@ -92,8 +98,10 @@ const recipes = [
     icon: "icons/berry_smoothie.png",
     originalAlcohol: 0,
     cookingtime: 2,
+    distillruns: 0,
     age: 0,
     wood: 0,
+    difficulty: 1,
     variations: [
       {
         name: "Кислый Ягодный Смузи",
@@ -121,8 +129,10 @@ const recipes = [
     icon: "icons/watermelon_smoothie.png",
     originalAlcohol: 0,
     cookingtime: 2,
+    distillruns: 0,
     age: 0,
     wood: 0,
+    difficulty: 1,
     variations: [
       {
         name: "Водянистый Арбузный Смузи",
@@ -150,8 +160,10 @@ const recipes = [
     icon: "icons/tea.png",
     originalAlcohol: 0,
     cookingtime: 2,
+    distillruns: 0,
     age: 0,
     wood: 0,
+    difficulty: 1,
     variations: [
       {
         name: "Слабый Чай",
@@ -179,8 +191,10 @@ const recipes = [
     icon: "icons/milkshake.png",
     originalAlcohol: 0,
     cookingtime: 2,
+    distillruns: 0,
     age: 0,
     wood: 0,
+    difficulty: 1,
     variations: [
       {
         name: "Молочный Коктейль",
@@ -208,8 +222,10 @@ const recipes = [
     icon: "icons/wheatbeer.png",
     originalAlcohol: 5,
     cookingtime: 8,
+    distillruns: 0,
     age: 2,
     wood: 1,
+    difficulty: 1,
     variations: [
       {
         name: "Тёмный Пшеничный Львовское Пиво",
@@ -237,8 +253,10 @@ const recipes = [
     icon: "icons/beer.png",
     originalAlcohol: 6,
     cookingtime: 8,
+    distillruns: 0,
     age: 3,
     wood: 0,
+    difficulty: 1,
     variations: [
       {
         name: "Черниговское Пиво",
@@ -266,8 +284,10 @@ const recipes = [
     icon: "icons/darkbeer.png",
     originalAlcohol: 7,
     cookingtime: 8,
+    distillruns: 0,
     age: 8,
     wood: 6,
+    difficulty: 2,
     variations: [
       {
         name: "Тёмное Черниговское Пиво",
@@ -295,8 +315,10 @@ const recipes = [
     icon: "icons/wine.png",
     originalAlcohol: 8,
     cookingtime: 5,
+    distillruns: 0,
     age: 20,
     wood: 0,
+    difficulty: 4,
     variations: [
       {
         name: "Простое Вино",
@@ -324,8 +346,10 @@ const recipes = [
     icon: "icons/medovik.png",
     originalAlcohol: 9,
     cookingtime: 3,
+    distillruns: 0,
     age: 4,
     wood: 2,
+    difficulty: 2,
     variations: [
       {
         name: "Неловкий Медовик",
@@ -353,8 +377,10 @@ const recipes = [
     icon: "icons/ap_medovik.png",
     originalAlcohol: 11,
     cookingtime: 4,
+    distillruns: 0,
     age: 4,
     wood: 2,
+    difficulty: 4,
     variations: [
       {
         name: "Яблочный Медовик",
@@ -382,8 +408,10 @@ const recipes = [
     icon: "icons/cidre.png",
     originalAlcohol: 7,
     cookingtime: 7,
+    distillruns: 0,
     age: 3,
     wood: 0,
+    difficulty: 4,
     variations: [
       {
         name: "Прокисший Сидр",
@@ -411,8 +439,10 @@ const recipes = [
     icon: "icons/apple_liquor.png",
     originalAlcohol: 14,
     cookingtime: 16,
+    distillruns: 3,
     age: 6,
     wood: 5,
+    difficulty: 5,
     variations: [
       {
         name: "Кислый Яблочный Ликёр",
@@ -440,8 +470,11 @@ const recipes = [
     icon: "icons/whiskey.png",
     originalAlcohol: 26,
     cookingtime: 10,
+    distillruns: 2,
+    distilltime: 50,
     age: 18,
     wood: 4,
+    difficulty: 7,
     variations: [
       {
         name: "Неприметный Виски",
@@ -469,8 +502,11 @@ const recipes = [
     icon: "icons/rum.png",
     originalAlcohol: 30,
     cookingtime: 6,
+    distillruns: 2,
+    distilltime: 30,
     age: 14,
     wood: 2,
+    difficulty: 6,
     variations: [
       {
         name: "Горький Ром",
@@ -498,8 +534,10 @@ const recipes = [
     icon: "icons/vodka.png",
     originalAlcohol: 20,
     cookingtime: 15,
+    distillruns: 3,
     age: 0,
     wood: 0,
+    difficulty: 4,
     variations: [
       {
         name: "Скверная Водка",
@@ -527,8 +565,10 @@ const recipes = [
     icon: "icons/shroom_vodka.png",
     originalAlcohol: 18,
     cookingtime: 18,
+    distillruns: 5,
     age: 0,
     wood: 0,
+    difficulty: 7,
     variations: [
       {
         name: "Грибная Водка",
@@ -550,8 +590,10 @@ const recipes = [
     icon: "icons/gin.png",
     originalAlcohol: 20,
     cookingtime: 6,
+    distillruns: 2,
     age: 0,
     wood: 0,
+    difficulty: 6,
     variations: [
       {
         name: "Светлый Джин",
@@ -579,8 +621,10 @@ const recipes = [
     icon: "icons/tequila.png",
     originalAlcohol: 20,
     cookingtime: 15,
+    distillruns: 2,
     age: 12,
     wood: 1,
+    difficulty: 5,
     variations: [
       {
         name: "Мезкаль",
@@ -608,8 +652,11 @@ const recipes = [
     icon: "icons/absinthe.png",
     originalAlcohol: 42,
     cookingtime: 3,
+    distillruns: 6,
+    distilltime: 80,
     age: 0,
     wood: 0,
+    difficulty: 8,
     variations: [
       {
         name: "Плохой Абсент",
@@ -637,8 +684,11 @@ const recipes = [
     icon: "icons/gr_absinthe.png",
     originalAlcohol: 46,
     cookingtime: 5,
+    distillruns: 6,
+    distilltime: 85,
     age: 0,
     wood: 0,
+    difficulty: 9,
     variations: [
       {
         name: "Зелёный Абсент",
@@ -660,8 +710,10 @@ const recipes = [
     icon: "icons/potato_soup.png",
     originalAlcohol: 0,
     cookingtime: 3,
+    distillruns: 0,
     age: 0,
     wood: 0,
+    difficulty: 1,
     variations: [
       {
         name: "Картофельный Суп",
@@ -677,8 +729,10 @@ const recipes = [
     icon: "icons/coffee.png",
     originalAlcohol: -6,
     cookingtime: 2,
+    distillruns: 0,
     age: 0,
     wood: 0,
+    difficulty: 3,
     variations: [
       {
         name: "Пресный Кофе",
@@ -706,8 +760,10 @@ const recipes = [
     icon: "icons/eggnog.png",
     originalAlcohol: 10,
     cookingtime: 2,
+    distillruns: 0,
     age: 3,
     wood: 0,
+    difficulty: 4,
     variations: [
       {
         name: "Яичный Ликёр",
@@ -735,8 +791,10 @@ const recipes = [
     icon: "icons/g_vodka.png",
     originalAlcohol: 20,
     cookingtime: 18,
+    distillruns: 3,
     age: 0,
     wood: 0,
+    difficulty: 6,
     variations: [
       {
         name: "Протухшая Водка",
@@ -764,8 +822,11 @@ const recipes = [
     icon: "icons/fire_whiskey.png",
     originalAlcohol: 28,
     cookingtime: 12,
+    distillruns: 3,
+    distilltime: 55,
     age: 18,
     wood: 4,
+    difficulty: 7,
     variations: [
       {
         name: "Порошковый Виски",
@@ -793,8 +854,10 @@ const recipes = [
     icon: "icons/hot_choc.png",
     originalAlcohol: 0,
     cookingtime: 2,
+    distillruns: 0,
     age: 0,
     wood: 0,
+    difficulty: 2,
     variations: [
       {
         name: "Горячий Шоколад",
@@ -810,8 +873,10 @@ const recipes = [
     icon: "icons/iced_coffee.png",
     originalAlcohol: -8,
     cookingtime: 1,
+    distillruns: 0,
     age: 0,
     wood: 0,
+    difficulty: 4,
     variations: [
       {
         name: "Водянистый Кофе",
@@ -839,8 +904,11 @@ const recipes = [
     icon: "icons/samogon.png",
     originalAlcohol: 35,
     cookingtime: 10,
+    distillruns: 2,
+    distilltime: 40,
     age: 5,
     wood: 0,
+    difficulty: 3,
     variations: [
       {
         name: "Паленый Самогон",
