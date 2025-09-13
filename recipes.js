@@ -4,6 +4,9 @@ const recipes = [
     type: "пиво",
     icon: "icons/kvas.png",
     originalAlcohol: 3,
+    cookingtime: 5,
+    age: 3,
+    wood: 0,
     variations: [
       {
         name: "Кислый Квас",
@@ -27,9 +30,12 @@ const recipes = [
   },
   {
     baseName: "Гречневый Суп",
-    type: "смуси",
+    type: "смузи",
     icon: "icons/soup.png",
     originalAlcohol: 0,
+    cookingtime: 6,
+    age: 1,
+    wood: 0,
     variations: [
       {
         name: "Жидкая Баланда",
@@ -53,9 +59,12 @@ const recipes = [
   },
   {
     baseName: "Яблочный Смузи",
-    type: "смуси",
+    type: "смузи",
     icon: "icons/apple_smoothie.png",
     originalAlcohol: 0,
+    cookingtime: 2,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Кислый Яблочный Смузи",
@@ -79,9 +88,12 @@ const recipes = [
   },
   {
     baseName: "Ягодный Смузи",
-    type: "смуси",
+    type: "смузи",
     icon: "icons/berry_smoothie.png",
     originalAlcohol: 0,
+    cookingtime: 2,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Кислый Ягодный Смузи",
@@ -105,9 +117,12 @@ const recipes = [
   },
   {
     baseName: "Арбузный Смузи",
-    type: "смуси",
+    type: "смузи",
     icon: "icons/watermelon_smoothie.png",
     originalAlcohol: 0,
+    cookingtime: 2,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Водянистый Арбузный Смузи",
@@ -134,6 +149,9 @@ const recipes = [
     type: "чай",
     icon: "icons/tea.png",
     originalAlcohol: 0,
+    cookingtime: 2,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Слабый Чай",
@@ -157,9 +175,12 @@ const recipes = [
   },
   {
     baseName: "Молочный Коктейль",
-    type: "смуси",
+    type: "смузи",
     icon: "icons/milkshake.png",
     originalAlcohol: 0,
+    cookingtime: 2,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Молочный Коктейль",
@@ -186,6 +207,9 @@ const recipes = [
     type: "пиво",
     icon: "icons/wheatbeer.png",
     originalAlcohol: 5,
+    cookingtime: 8,
+    age: 2,
+    wood: 1,
     variations: [
       {
         name: "Тёмный Пшеничный Львовское Пиво",
@@ -212,6 +236,9 @@ const recipes = [
     type: "пиво",
     icon: "icons/beer.png",
     originalAlcohol: 6,
+    cookingtime: 8,
+    age: 3,
+    wood: 0,
     variations: [
       {
         name: "Черниговское Пиво",
@@ -220,7 +247,7 @@ const recipes = [
         effects: []
       },
       {
-        name: "Черниговское Пиво (стандарт)", // Добавил для ясности, чтобы отличалось от "слабого"
+        name: "Черниговское Пиво (стандарт)",
         alcohol: 6,
         ingredients: ["Пшеница 6"],
         effects: []
@@ -238,6 +265,9 @@ const recipes = [
     type: "пиво",
     icon: "icons/darkbeer.png",
     originalAlcohol: 7,
+    cookingtime: 8,
+    age: 8,
+    wood: 6,
     variations: [
       {
         name: "Тёмное Черниговское Пиво",
@@ -264,6 +294,9 @@ const recipes = [
     type: "вино",
     icon: "icons/wine.png",
     originalAlcohol: 8,
+    cookingtime: 5,
+    age: 20,
+    wood: 0,
     variations: [
       {
         name: "Простое Вино",
@@ -290,6 +323,9 @@ const recipes = [
     type: "медовик",
     icon: "icons/medovik.png",
     originalAlcohol: 9,
+    cookingtime: 3,
+    age: 4,
+    wood: 2,
     variations: [
       {
         name: "Неловкий Медовик",
@@ -316,6 +352,9 @@ const recipes = [
     type: "медовик",
     icon: "icons/ap_medovik.png",
     originalAlcohol: 11,
+    cookingtime: 4,
+    age: 4,
+    wood: 2,
     variations: [
       {
         name: "Яблочный Медовик",
@@ -342,6 +381,9 @@ const recipes = [
     type: "пиво",
     icon: "icons/cidre.png",
     originalAlcohol: 7,
+    cookingtime: 7,
+    age: 3,
+    wood: 0,
     variations: [
       {
         name: "Прокисший Сидр",
@@ -368,6 +410,9 @@ const recipes = [
     type: "крепкий алкоголь",
     icon: "icons/apple_liquor.png",
     originalAlcohol: 14,
+    cookingtime: 16,
+    age: 6,
+    wood: 5,
     variations: [
       {
         name: "Кислый Яблочный Ликёр",
@@ -394,6 +439,9 @@ const recipes = [
     type: "крепкий алкоголь",
     icon: "icons/whiskey.png",
     originalAlcohol: 26,
+    cookingtime: 10,
+    age: 18,
+    wood: 4,
     variations: [
       {
         name: "Неприметный Виски",
@@ -420,6 +468,9 @@ const recipes = [
     type: "ром",
     icon: "icons/rum.png",
     originalAlcohol: 30,
+    cookingtime: 6,
+    age: 14,
+    wood: 2,
     variations: [
       {
         name: "Горький Ром",
@@ -446,6 +497,9 @@ const recipes = [
     type: "водка",
     icon: "icons/vodka.png",
     originalAlcohol: 20,
+    cookingtime: 15,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Скверная Водка",
@@ -472,16 +526,19 @@ const recipes = [
     type: "водка",
     icon: "icons/shroom_vodka.png",
     originalAlcohol: 18,
+    cookingtime: 18,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Грибная Водка",
-        alcohol: 17, // 18 - 1 (для 2х вариантов, чтобы была разница)
+        alcohol: 17,
         ingredients: ["Картофель 10", "Красный гриб 3", "Коричневый гриб 3"],
         effects: ["Слабость I 80", "Дезориентация I 27", "Ночное зрение I 50-80", "Слепота I 12-2", "Замедление I 10-3"]
       },
       {
         name: "Светящаяся Грибная Водка",
-        alcohol: 19, // 18 + 1
+        alcohol: 19,
         ingredients: ["Картофель 10", "Красный гриб 3", "Коричневый гриб 3"],
         effects: ["Слабость I 80", "Дезориентация I 27", "Ночное зрение I 50-80", "Слепота I 12-2", "Замедление I 10-3"]
       }
@@ -492,6 +549,9 @@ const recipes = [
     type: "крепкий алкоголь",
     icon: "icons/gin.png",
     originalAlcohol: 20,
+    cookingtime: 6,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Светлый Джин",
@@ -518,6 +578,9 @@ const recipes = [
     type: "крепкий алкоголь",
     icon: "icons/tequila.png",
     originalAlcohol: 20,
+    cookingtime: 15,
+    age: 12,
+    wood: 1,
     variations: [
       {
         name: "Мезкаль",
@@ -544,6 +607,9 @@ const recipes = [
     type: "крепкий алкоголь",
     icon: "icons/absinthe.png",
     originalAlcohol: 42,
+    cookingtime: 3,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Плохой Абсент",
@@ -570,6 +636,9 @@ const recipes = [
     type: "крепкий алкоголь",
     icon: "icons/gr_absinthe.png",
     originalAlcohol: 46,
+    cookingtime: 5,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Зелёный Абсент",
@@ -587,9 +656,12 @@ const recipes = [
   },
   {
     baseName: "Картофельный Суп",
-    type: "смуси",
+    type: "смузи",
     icon: "icons/potato_soup.png",
     originalAlcohol: 0,
+    cookingtime: 3,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Картофельный Суп",
@@ -603,7 +675,10 @@ const recipes = [
     baseName: "Кофе",
     type: "чай",
     icon: "icons/coffee.png",
-    originalAlcohol: -6, // Сохраняем оригинальное значение из YAML, но в UI будет 0
+    originalAlcohol: -6,
+    cookingtime: 2,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Пресный Кофе",
@@ -630,6 +705,9 @@ const recipes = [
     type: "крепкий алкоголь",
     icon: "icons/eggnog.png",
     originalAlcohol: 10,
+    cookingtime: 2,
+    age: 3,
+    wood: 0,
     variations: [
       {
         name: "Яичный Ликёр",
@@ -656,6 +734,9 @@ const recipes = [
     type: "водка",
     icon: "icons/g_vodka.png",
     originalAlcohol: 20,
+    cookingtime: 18,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Протухшая Водка",
@@ -682,6 +763,9 @@ const recipes = [
     type: "крепкий алкоголь",
     icon: "icons/fire_whiskey.png",
     originalAlcohol: 28,
+    cookingtime: 12,
+    age: 18,
+    wood: 4,
     variations: [
       {
         name: "Порошковый Виски",
@@ -708,6 +792,9 @@ const recipes = [
     type: "чай",
     icon: "icons/hot_choc.png",
     originalAlcohol: 0,
+    cookingtime: 2,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Горячий Шоколад",
@@ -721,7 +808,10 @@ const recipes = [
     baseName: "Ледяной Кофе",
     type: "чай",
     icon: "icons/iced_coffee.png",
-    originalAlcohol: -8, // Сохраняем оригинальное значение из YAML, но в UI будет 0
+    originalAlcohol: -8,
+    cookingtime: 1,
+    age: 0,
+    wood: 0,
     variations: [
       {
         name: "Водянистый Кофе",
@@ -748,6 +838,9 @@ const recipes = [
     type: "крепкий алкоголь",
     icon: "icons/samogon.png",
     originalAlcohol: 35,
+    cookingtime: 10,
+    age: 5,
+    wood: 0,
     variations: [
       {
         name: "Паленый Самогон",
