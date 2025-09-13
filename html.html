@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Напитки LeBratishka</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Рецепты напитков LeBratishka</h1>
+  <p>IP сервера: <span id="server-ip-host" title="Нажмите, чтобы скопировать IP-адрес">LeBratishka.aternos.me</span> Порт: <span id="server-ip-port" title="Нажмите, чтобы скопировать порт">58258</span></p>
+  <p class="game-version">Версия: <span id="game-version-text">1.21.100</span> (<a href="https://mcpehub.org/download-mcpe/14385-minecraft-1-21-100-06.html" target="_blank" rel="noopener noreferrer" title="Скачать Minecraft 1.21.100">Скачать</a>)</p>
+</header>
+
+<section id="filters">
+  <label>Фильтр по типу:
+    <select id="type-filter">
+      <option value="all">Все</option>
+      <option value="пиво">Пиво</option>
+      <option value="водка">Водка</option>
+      <option value="ром">Ром</option>
+      <option value="смуси">Смузи</option>
+      <option value="чай">Чай</option>
+      <option value="медовик">Медовик</option>
+      <option value="вино">Вино</option>
+      <option value="крепкий алкоголь">Крепкий алкоголь</option>
+    </select>
+  </label>
+</section>
+
+<section id="recipes-container"></section>
+
+<script src="recipes.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
