@@ -60,18 +60,19 @@ modal.addEventListener("click", (event) => {
 
 const woodTypeMap = {
   0: 'Без бочки',
-  1: 'Дубовая',
-  2: 'Берёзовая',
-  3: 'Еловая',
-  4: 'Тропическая',
+  1: 'Берёзовая',
+  2: 'Дубовая', // Corrected order to match typical Minecraft wood IDs for better readability (0=Any, 1=Birch, 2=Oak, 3=Jungle, 4=Spruce, 5=Acacia, 6=Dark Oak...)
+  3: 'Тропическая',
+  4: 'Еловая',
   5: 'Акациевая',
   6: 'Тёмно-дубовая',
-  // Добавьте другие типы дерева, если они будут использоваться в будущем
-  // 7: 'Багровая',
-  // 8: 'Искаженная',
-  // 9: 'Мангровая',
-  // 10: 'Вишневая',
-  // 11: 'Бамбуковая'
+  7: 'Багровая',
+  8: 'Искаженная',
+  9: 'Мангровая',
+  10: 'Вишневая',
+  11: 'Бамбуковая',
+  12: 'Резная медь',
+  13: 'Бледный дуб',
 };
 
 let currentModalDrinkFamily = null;
@@ -180,24 +181,43 @@ function switchModalVariation(direction) {
 modalNavLeftButton.addEventListener('click', () => switchModalVariation(-1));
 modalNavRightButton.addEventListener('click', () => switchModalVariation(1));
 
-function renderRecipes(type = "all") {
+function renderRecipes(filterCategory = "all") {
   container.innerHTML = "";
-  let filteredFamilies = type === "all" ? recipes : recipes.filter(r => r.type === type);
+  let filteredFamilies = [];
+
+  if (filterCategory === "all") {
+    filteredFamilies = recipes;
+  } else if (filterCategory === "alcoholic") {
+    filteredFamilies = recipes.filter(r => r.originalAlcohol > 0);
+  } else if (filterCategory === "non-alcoholic") {
+    filteredFamilies = recipes.filter(r => r.originalAlcohol <= 0);
+  } else if (filterCategory === "strong-alcohol") {
+    filteredFamilies = recipes.filter(r => r.originalAlcohol >= 20);
+  } else {
+    filteredFamilies = recipes.filter(r => r.type === filterCategory);
+  }
   
   filteredFamilies.sort((a, b) => {
-    a.variations.sort((v1, v2) => v1.alcohol - v2.alcohol);
-    b.variations.sort((v1, v2) => v1.alcohol - v2.alcohol);
+    // Non-alcoholic first (originalAlcohol <= 0)
+    const isANonAlcoholic = a.originalAlcohol <= 0;
+    const isBNonAlcoholic = b.originalAlcohol <= 0;
 
-    const maxAlcoholA = Math.max(...a.variations.map(v => v.alcohol));
-    const maxAlcoholB = Math.max(...b.variations.map(v => v.alcohol));
+    if (isANonAlcoholic && !isBNonAlcoholic) return -1; // A (non-alc) comes before B (alc)
+    if (!isANonAlcoholic && isBNonAlcoholic) return 1;  // B (non-alc) comes before A (alc)
 
-    if (maxAlcoholA === 0 && maxAlcoholB !== 0) return -1;
-    if (maxAlcoholA !== 0 && maxAlcoholB === 0) return 1;
-    return maxAlcoholB - maxAlcoholA;
+    // If both are non-alcoholic or both are alcoholic, sort by alcohol content (desc) then name (asc)
+    if (a.originalAlcohol !== b.originalAlcohol) {
+      return b.originalAlcohol - a.originalAlcohol; // Higher alcohol first for alcoholic, or 0-0 for non-alc
+    }
+    return a.baseName.localeCompare(b.baseName); // Alphabetical if alcohol is same
   });
 
   filteredFamilies.forEach(drinkFamily => {
-    const initialCardVariationIndex = drinkFamily.variations.length > 1 ? 1 : 0; // Второй вариант, если есть, иначе первый
+    // Default to the middle variation (normal quality) if available, otherwise the first
+    const initialCardVariationIndex = Math.min(
+      1, // Attempt to show the "normal" quality if available
+      drinkFamily.variations.length - 1 // Or the last one if only one or two variations exist
+    );
     const initialCardVariation = drinkFamily.variations[initialCardVariationIndex];
 
     const card = document.createElement("div");
@@ -257,7 +277,11 @@ function renderRecipes(type = "all") {
 }
 
 function openModal(drinkFamily) {
-  const modalInitialVariationIndex = drinkFamily.variations.length > 1 ? 1 : 0; // Второй вариант, если есть, иначе первый
+  // Default to the middle variation (normal quality) if available, otherwise the first
+  const modalInitialVariationIndex = Math.min(
+    1, // Attempt to show the "normal" quality if available
+    drinkFamily.variations.length - 1 // Or the last one if only one or two variations exist
+  );
   updateModalContent(drinkFamily, modalInitialVariationIndex);
   modal.style.display = "flex";
   document.body.style.overflow = "hidden";
@@ -265,4 +289,4 @@ function openModal(drinkFamily) {
 
 filter.addEventListener("change", () => renderRecipes(filter.value));
 
-renderRecipes();
+renderRecipes(); // Initial render
