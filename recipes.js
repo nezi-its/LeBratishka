@@ -6,9 +6,9 @@ const recipes = [
     originalAlcohol: 3,
     cookingtime: 5,
     distillruns: 0,
-    age: 1,
+    age: 3,
     wood: 0,
-    difficulty: 1,
+    difficulty: 2,
     variations: [
       {
         name: "Кислый Квас",
@@ -32,7 +32,7 @@ const recipes = [
   },
   {
     baseName: "Гречневый Суп",
-    type: "смузи",
+    type: "еда", // Changed type from 'смузи' to 'еда' for better categorization
     icon: "icons/soup.png",
     originalAlcohol: 0,
     cookingtime: 6,
@@ -75,19 +75,19 @@ const recipes = [
       {
         name: "Кислый Яблочный Смузи",
         alcohol: 0,
-        ingredients: ["Яблоко 4", "Сахар 2"],
+        ingredients: ["Яблоко 8", "Сахар 3"], // Corrected ingredients to match config
         effects: ["Скорость I 20-40 сек", "Регенерация I 5-10 сек"]
       },
       {
         name: "Яблочный Смузи",
         alcohol: 0,
-        ingredients: ["Яблоко 4", "Сахар 2"],
+        ingredients: ["Яблоко 8", "Сахар 3"],
         effects: ["Скорость I 20-40 сек", "Регенерация I 5-10 сек"]
       },
       {
         name: "Сладкий Яблочный Смузи",
         alcohol: 0,
-        ingredients: ["Яблоко 4", "Сахар 2"],
+        ingredients: ["Яблоко 8", "Сахар 3"],
         effects: ["Скорость I 20-40 сек", "Регенерация I 5-10 сек"]
       }
     ]
@@ -106,19 +106,19 @@ const recipes = [
       {
         name: "Кислый Ягодный Смузи",
         alcohol: 0,
-        ingredients: ["Сладкие ягоды 5", "Сахар 2"],
+        ingredients: ["Сладкие ягоды 8", "Сахар 3"], // Corrected ingredients to match config
         effects: ["Регенерация I 10-20 сек", "Скорость I 10-30 сек"]
       },
       {
         name: "Ягодный Смузи",
         alcohol: 0,
-        ingredients: ["Сладкие ягоды 5", "Сахар 2"],
+        ingredients: ["Сладкие ягоды 8", "Сахар 3"],
         effects: ["Регенерация I 10-20 сек", "Скорость I 10-30 сек"]
       },
       {
         name: "Сладкий Ягодный Смузи",
         alcohol: 0,
-        ingredients: ["Сладкие ягоды 5", "Сахар 2"],
+        ingredients: ["Сладкие ягоды 8", "Сахар 3"],
         effects: ["Регенерация I 10-20 сек", "Скорость I 10-30 сек"]
       }
     ]
@@ -137,19 +137,19 @@ const recipes = [
       {
         name: "Водянистый Арбузный Смузи",
         alcohol: 0,
-        ingredients: ["Ломтик арбуза 3", "Сахар 2"],
+        ingredients: ["Ломтик арбуза 8", "Сахар 3"], // Corrected ingredients to match config
         effects: ["Насыщение I 10-15 сек", "Регенерация I 5-10 сек"]
       },
       {
         name: "Арбузный Смузи",
         alcohol: 0,
-        ingredients: ["Ломтик арбуза 3", "Сахар 2"],
+        ingredients: ["Ломтик арбуза 8", "Сахар 3"],
         effects: ["Насыщение I 10-15 сек", "Регенерация I 5-10 сек"]
       },
       {
         name: "Сочный Арбузный Смузи",
         alcohol: 0,
-        ingredients: ["Ломтик арбуза 3", "Сахар 2"],
+        ingredients: ["Ломтик арбуза 8", "Сахар 3"],
         effects: ["Насыщение I 10-15 сек", "Регенерация I 5-10 сек"]
       }
     ]
@@ -168,26 +168,26 @@ const recipes = [
       {
         name: "Слабый Чай",
         alcohol: 0,
-        ingredients: ["Трава 2"],
-        effects: ["Скорость I 5-10 сек", "Регенерация I 5-15 сек"]
+        ingredients: ["Трава 6"], // Corrected ingredients to match config
+        effects: ["Скорость I 5-10 сек"] // Removed regeneration as it's not in BreweryX config for tea
       },
       {
         name: "Чай",
         alcohol: 0,
-        ingredients: ["Трава 2"],
-        effects: ["Скорость I 5-10 сек", "Регенерация I 5-15 сек"]
+        ingredients: ["Трава 6"],
+        effects: ["Скорость I 5-10 сек"]
       },
       {
         name: "Крепкий Чай",
         alcohol: 0,
-        ingredients: ["Трава 2"],
-        effects: ["Скорость I 5-10 сек", "Регенерация I 5-15 сек"]
+        ingredients: ["Трава 6"],
+        effects: ["Скорость I 5-10 сек"]
       }
     ]
   },
   {
     baseName: "Молочный Коктейль",
-    type: "смузи",
+    type: "смузи", // Changed type from 'смузи' to 'напиток' if we add a 'напиток' category or keep it 'смузи'. Sticking to 'смузи' for now.
     icon: "icons/milkshake.png",
     originalAlcohol: 0,
     cookingtime: 2,
@@ -197,30 +197,30 @@ const recipes = [
     difficulty: 1,
     variations: [
       {
-        name: "Молочный Коктейль",
+        name: "Пресный Шоколадный Коктейль", // From + lore
         alcohol: 0,
-        ingredients: ["Ведро молока 2", "Сахар 2", "Какао-порошок 1"],
+        ingredients: ["Ведро молока 2", "Сахар 2", "Какао-бобы 1"], // Corrected ingredient name
         effects: ["Регенерация I 5-10 сек", "Насыщение I 5-15 сек"]
       },
       {
-        name: "Шоколадный Коктейль",
+        name: "Вкусный Шоколадный Коктейль", // From ++ lore
         alcohol: 0,
-        ingredients: ["Ведро молока 2", "Сахар 2", "Какао-порошок 1"],
+        ingredients: ["Ведро молока 2", "Сахар 2", "Какао-бобы 1"],
         effects: ["Регенерация I 5-10 сек", "Насыщение I 5-15 сек"]
       },
       {
-        name: "Ванильный Молочный Коктейль",
+        name: "Сочный Шоколадный Коктейль", // From +++ lore
         alcohol: 0,
-        ingredients: ["Ведро молока 2", "Сахар 2", "Какао-порошок 1"],
+        ingredients: ["Ведро молока 2", "Сахар 2", "Какао-бобы 1"],
         effects: ["Регенерация I 5-10 сек", "Насыщение I 5-15 сек"]
       }
     ]
   },
   {
-    baseName: "Пшеничное Львовское Пиво",
+    baseName: "Пшеничное Львовское Пиво", // Corrected name from "Svitlo Lviv Beer"
     type: "пиво",
-    icon: "icons/wheatbeer.png",
-    originalAlcohol: 5,
+    icon: "icons/wheatbeer.png", // Assuming this icon is suitable for light beer
+    originalAlcohol: 5, // Alcohol for Svitlo Lviv Beer
     cookingtime: 8,
     distillruns: 0,
     age: 2,
@@ -228,21 +228,21 @@ const recipes = [
     difficulty: 1,
     variations: [
       {
-        name: "Тёмный Пшеничный Львовское Пиво",
-        alcohol: 4,
-        ingredients: ["Пшеница 3"],
-        effects: []
-      },
-      {
-        name: "Пшеничное Львовское Пиво",
+        name: "Светлое Львовское Пиво", // Original name from config
         alcohol: 5,
-        ingredients: ["Пшеница 3"],
+        ingredients: ["Пшеница 10"],
         effects: []
       },
       {
-        name: "Отборный Пшеничный Львовское Пиво",
-        alcohol: 6,
-        ingredients: ["Пшеница 3"],
+        name: "Освежающее Львовское Пиво", // Based on lore for ++
+        alcohol: 5,
+        ingredients: ["Пшеница 10"],
+        effects: []
+      },
+      {
+        name: "Мягкое Львовское Пиво", // Based on lore for +++
+        alcohol: 5,
+        ingredients: ["Пшеница 10"],
         effects: []
       }
     ]
@@ -259,27 +259,27 @@ const recipes = [
     difficulty: 1,
     variations: [
       {
-        name: "Черниговское Пиво",
-        alcohol: 5,
-        ingredients: ["Пшеница 6"],
-        effects: []
-      },
-      {
-        name: "Черниговское Пиво (стандарт)",
+        name: "Черниговское Пиво (обычное)", // from + lore
         alcohol: 6,
-        ingredients: ["Пшеница 6"],
+        ingredients: ["Пшеница 14"], // Corrected quantity
         effects: []
       },
       {
-        name: "Отборное Черниговское Пиво",
-        alcohol: 7,
-        ingredients: ["Пшеница 6"],
+        name: "Черниговское Пиво",
+        alcohol: 6,
+        ingredients: ["Пшеница 14"],
+        effects: []
+      },
+      {
+        name: "Хрустящее Черниговское Пиво", // from +++ lore
+        alcohol: 6,
+        ingredients: ["Пшеница 14"],
         effects: []
       }
     ]
   },
   {
-    baseName: "Крепкое Черниговское Пиво",
+    baseName: "Тёмное Черниговское Пиво", // Changed from "Крепкое Черниговское Пиво" to match config
     type: "пиво",
     icon: "icons/darkbeer.png",
     originalAlcohol: 7,
@@ -291,20 +291,20 @@ const recipes = [
     variations: [
       {
         name: "Тёмное Черниговское Пиво",
-        alcohol: 6,
-        ingredients: ["Пшеница 6"],
-        effects: []
-      },
-      {
-        name: "Крепкое Черниговское Пиво",
         alcohol: 7,
-        ingredients: ["Пшеница 6"],
+        ingredients: ["Пшеница 18"], // Corrected quantity
         effects: []
       },
       {
-        name: "Отборное Тёмное Черниговское Пиво",
-        alcohol: 8,
-        ingredients: ["Пшеница 6"],
+        name: "Насыщенное Тёмное Черниговское Пиво", // from ++ lore
+        alcohol: 7,
+        ingredients: ["Пшеница 18"],
+        effects: []
+      },
+      {
+        name: "Глубокое Тёмное Черниговское Пиво", // from +++ lore
+        alcohol: 7,
+        ingredients: ["Пшеница 18"],
         effects: []
       }
     ]
@@ -321,8 +321,8 @@ const recipes = [
     difficulty: 4,
     variations: [
       {
-        name: "Простое Вино",
-        alcohol: 7,
+        name: "Терпкое Вино",
+        alcohol: 8,
         ingredients: ["Сладкие ягоды 5"],
         effects: []
       },
@@ -333,8 +333,8 @@ const recipes = [
         effects: []
       },
       {
-        name: "Отборное Красное Вино",
-        alcohol: 9,
+        name: "Ароматное Красное Вино",
+        alcohol: 8,
         ingredients: ["Сладкие ягоды 5"],
         effects: []
       }
@@ -352,20 +352,20 @@ const recipes = [
     difficulty: 2,
     variations: [
       {
-        name: "Неловкий Медовик",
-        alcohol: 8,
-        ingredients: ["Сахарный тростник 6"],
-        effects: []
-      },
-      {
-        name: "Медовик",
+        name: "Медовик", // + lore not specified, using base name
         alcohol: 9,
         ingredients: ["Сахарный тростник 6"],
         effects: []
       },
       {
-        name: "Золотой Медовик",
-        alcohol: 10,
+        name: "Золотой Медовик", // From name
+        alcohol: 9,
+        ingredients: ["Сахарный тростник 6"],
+        effects: []
+      },
+      {
+        name: "Сладкий Медовик", // from +++ lore
+        alcohol: 9,
         ingredients: ["Сахарный тростник 6"],
         effects: []
       }
@@ -383,20 +383,20 @@ const recipes = [
     difficulty: 4,
     variations: [
       {
-        name: "Яблочный Медовик",
-        alcohol: 10,
-        ingredients: ["Сахарный тростник 6", "Яблоко 2"],
-        effects: ["Подводное дыхание I-II 150 сек"]
-      },
-      {
-        name: "Сладкий Яблочный Медовик",
+        name: "Лёгкий Яблочный Медовик", // from + lore
         alcohol: 11,
         ingredients: ["Сахарный тростник 6", "Яблоко 2"],
         effects: ["Подводное дыхание I-II 150 сек"]
       },
       {
-        name: "Сладкий Золотой Яблочный Медовик",
-        alcohol: 12,
+        name: "Сладкий Яблочный Медовик", // from ++ lore
+        alcohol: 11,
+        ingredients: ["Сахарный тростник 6", "Яблоко 2"],
+        effects: ["Подводное дыхание I-II 150 сек"]
+      },
+      {
+        name: "Сбалансированный Яблочный Медовик", // from +++ lore
+        alcohol: 11,
         ingredients: ["Сахарный тростник 6", "Яблоко 2"],
         effects: ["Подводное дыхание I-II 150 сек"]
       }
@@ -414,8 +414,8 @@ const recipes = [
     difficulty: 4,
     variations: [
       {
-        name: "Прокисший Сидр",
-        alcohol: 6,
+        name: "Кисловатый Сидр", // from + lore
+        alcohol: 7,
         ingredients: ["Яблоко 14"],
         effects: []
       },
@@ -426,8 +426,8 @@ const recipes = [
         effects: []
       },
       {
-        name: "Отборный Яблочный Сидр",
-        alcohol: 8,
+        name: "Благородный Яблочный Сидр", // from +++ lore
+        alcohol: 7,
         ingredients: ["Яблоко 14"],
         effects: []
       }
@@ -445,8 +445,8 @@ const recipes = [
     difficulty: 5,
     variations: [
       {
-        name: "Кислый Яблочный Ликёр",
-        alcohol: 13,
+        name: "Резкий Яблочный Ликёр", // from + lore
+        alcohol: 14,
         ingredients: ["Яблоко 12"],
         effects: []
       },
@@ -457,8 +457,8 @@ const recipes = [
         effects: []
       },
       {
-        name: "Кальвадос",
-        alcohol: 15,
+        name: "Сбалансированный Яблочный Ликёр", // from +++ lore
+        alcohol: 14,
         ingredients: ["Яблоко 12"],
         effects: []
       }
@@ -477,8 +477,8 @@ const recipes = [
     difficulty: 7,
     variations: [
       {
-        name: "Неприметный Виски",
-        alcohol: 25,
+        name: "Мягкий Виски", // from + lore
+        alcohol: 26,
         ingredients: ["Пшеница 10"],
         effects: []
       },
@@ -489,8 +489,8 @@ const recipes = [
         effects: []
       },
       {
-        name: "Шотландский Виски",
-        alcohol: 27,
+        name: "Шотландский Виски", // from name
+        alcohol: 26,
         ingredients: ["Пшеница 10"],
         effects: []
       }
@@ -498,7 +498,7 @@ const recipes = [
   },
   {
     baseName: "Пряный Ром",
-    type: "ром",
+    type: "крепкий алкоголь", // Changed from "ром" to "крепкий алкоголь" for broader category
     icon: "icons/rum.png",
     originalAlcohol: 30,
     cookingtime: 6,
@@ -509,8 +509,8 @@ const recipes = [
     difficulty: 6,
     variations: [
       {
-        name: "Горький Ром",
-        alcohol: 29,
+        name: "Горький Ром", // from + lore
+        alcohol: 30,
         ingredients: ["Сахарный тростник 18"],
         effects: ["Сопротивление огню I 20-100 сек", "Отравление I-0 30-0 сек"]
       },
@@ -521,8 +521,8 @@ const recipes = [
         effects: ["Сопротивление огню I 20-100 сек", "Отравление I-0 30-0 сек"]
       },
       {
-        name: "Золотой Пряный Ром",
-        alcohol: 31,
+        name: "Богато Пряный Ром", // from +++ lore
+        alcohol: 30,
         ingredients: ["Сахарный тростник 18"],
         effects: ["Сопротивление огню I 20-100 сек", "Отравление I-0 30-0 сек"]
       }
@@ -530,7 +530,7 @@ const recipes = [
   },
   {
     baseName: "Водка",
-    type: "водка",
+    type: "крепкий алкоголь", // Changed from "водка" to "крепкий алкоголь"
     icon: "icons/vodka.png",
     originalAlcohol: 20,
     cookingtime: 15,
@@ -540,8 +540,8 @@ const recipes = [
     difficulty: 4,
     variations: [
       {
-        name: "Скверная Водка",
-        alcohol: 19,
+        name: "Почти не питьевая Водка", // from + lore
+        alcohol: 20,
         ingredients: ["Картофель 10"],
         effects: ["Слабость I 15", "Отравление I 10"]
       },
@@ -552,8 +552,8 @@ const recipes = [
         effects: ["Слабость I 15", "Отравление I 10"]
       },
       {
-        name: "Русская Водка",
-        alcohol: 21,
+        name: "Классическая Русская Водка", // from +++ lore
+        alcohol: 20,
         ingredients: ["Картофель 10"],
         effects: ["Слабость I 15", "Отравление I 10"]
       }
@@ -561,7 +561,7 @@ const recipes = [
   },
   {
     baseName: "Грибная Водка",
-    type: "водка",
+    type: "крепкий алкоголь", // Changed from "водка" to "крепкий алкоголь"
     icon: "icons/shroom_vodka.png",
     originalAlcohol: 18,
     cookingtime: 18,
@@ -571,14 +571,14 @@ const recipes = [
     difficulty: 7,
     variations: [
       {
-        name: "Грибная Водка",
-        alcohol: 17,
+        name: "Грибная Водка", // No explicit + lore
+        alcohol: 18,
         ingredients: ["Картофель 10", "Красный гриб 3", "Коричневый гриб 3"],
         effects: ["Слабость I 80", "Дезориентация I 27", "Ночное зрение I 50-80", "Слепота I 12-2", "Замедление I 10-3"]
       },
       {
-        name: "Светящаяся Грибная Водка",
-        alcohol: 19,
+        name: "Светящаяся Грибная Водка", // From +++ lore
+        alcohol: 18,
         ingredients: ["Картофель 10", "Красный гриб 3", "Коричневый гриб 3"],
         effects: ["Слабость I 80", "Дезориентация I 27", "Ночное зрение I 50-80", "Слепота I 12-2", "Замедление I 10-3"]
       }
@@ -596,21 +596,21 @@ const recipes = [
     difficulty: 6,
     variations: [
       {
-        name: "Светлый Джин",
-        alcohol: 19,
-        ingredients: ["Пшеница 9", "Синие цветы 6", "Яблоко 1"],
-        effects: []
-      },
-      {
-        name: "Джин",
+        name: "Джин", // No explicit + lore
         alcohol: 20,
-        ingredients: ["Пшеница 9", "Синие цветы 6", "Яблоко 1"],
+        ingredients: ["Пшеница 9", "Василёк 6", "Яблоко 1"], // Corrected ingredient name
         effects: []
       },
       {
-        name: "Старый Том Джин",
-        alcohol: 21,
-        ingredients: ["Пшеница 9", "Синие цветы 6", "Яблоко 1"],
+        name: "Джин с можжевельником", // from ++ lore
+        alcohol: 20,
+        ingredients: ["Пшеница 9", "Василёк 6", "Яблоко 1"],
+        effects: []
+      },
+      {
+        name: "Сбалансированный Джин", // from +++ lore
+        alcohol: 20,
+        ingredients: ["Пшеница 9", "Василёк 6", "Яблоко 1"],
         effects: []
       }
     ]
@@ -627,20 +627,8 @@ const recipes = [
     difficulty: 5,
     variations: [
       {
-        name: "Мезкаль",
-        alcohol: 19,
-        ingredients: ["Кактус 8"],
-        effects: []
-      },
-      {
-        name: "Текила",
+        name: "Текила", // No explicit lore for variations, using base name
         alcohol: 20,
-        ingredients: ["Кактус 8"],
-        effects: []
-      },
-      {
-        name: "Аньехо Текила",
-        alcohol: 21,
         ingredients: ["Кактус 8"],
         effects: []
       }
@@ -659,20 +647,14 @@ const recipes = [
     difficulty: 8,
     variations: [
       {
-        name: "Плохой Абсент",
-        alcohol: 41,
-        ingredients: ["Трава 15"],
-        effects: ["Отравление I 15-25"]
-      },
-      {
-        name: "Абсент",
+        name: "Абсент", // No explicit + lore
         alcohol: 42,
         ingredients: ["Трава 15"],
         effects: ["Отравление I 15-25"]
       },
       {
-        name: "Крепкий Абсент",
-        alcohol: 43,
+        name: "Сильный Абсент", // from +++ lore
+        alcohol: 42,
         ingredients: ["Трава 15"],
         effects: ["Отравление I 15-25"]
       }
@@ -691,14 +673,20 @@ const recipes = [
     difficulty: 9,
     variations: [
       {
-        name: "Зелёный Абсент",
-        alcohol: 45,
+        name: "Зелёный Абсент", // from + lore
+        alcohol: 46,
         ingredients: ["Трава 17", "Ядовитый картофель 2"],
         effects: ["Отравление I 25-40", "Мгновенный урон II", "Ночное зрение I 40-60"]
       },
       {
-        name: "Ярко-зелёный Абсент",
-        alcohol: 47,
+        name: "Ярко-зелёный Абсент", // from name
+        alcohol: 46,
+        ingredients: ["Трава 17", "Ядовитый картофель 2"],
+        effects: ["Отравление I 25-40", "Мгновенный урон II", "Ночное зрение I 40-60"]
+      },
+      {
+        name: "Яркий Травяной Абсент", // from +++ lore
+        alcohol: 46,
         ingredients: ["Трава 17", "Ядовитый картофель 2"],
         effects: ["Отравление I 25-40", "Мгновенный урон II", "Ночное зрение I 40-60"]
       }
@@ -706,7 +694,7 @@ const recipes = [
   },
   {
     baseName: "Картофельный Суп",
-    type: "смузи",
+    type: "еда", // Changed type from 'смузи' to 'еда'
     icon: "icons/potato_soup.png",
     originalAlcohol: 0,
     cookingtime: 3,
@@ -725,9 +713,9 @@ const recipes = [
   },
   {
     baseName: "Кофе",
-    type: "чай",
+    type: "напиток", // Changed type from 'чай' to 'напиток' for better grouping
     icon: "icons/coffee.png",
-    originalAlcohol: -6,
+    originalAlcohol: -6, // Negative alcohol for energy boost
     cookingtime: 2,
     distillruns: 0,
     age: 0,
@@ -735,20 +723,20 @@ const recipes = [
     difficulty: 3,
     variations: [
       {
-        name: "Пресный Кофе",
-        alcohol: 0,
+        name: "Пресный Кофе", // from + lore
+        alcohol: -6,
         ingredients: ["Какао-бобы 12", "Ведро молока 2"],
         effects: ["Регенерация I 2-5 сек", "Скорость I 30-140 сек"]
       },
       {
-        name: "Кофе",
-        alcohol: 0,
+        name: "Нормальный Кофе", // from ++ lore
+        alcohol: -6,
         ingredients: ["Какао-бобы 12", "Ведро молока 2"],
         effects: ["Регенерация I 2-5 сек", "Скорость I 30-140 сек"]
       },
       {
-        name: "Крепкий Кофе",
-        alcohol: 0,
+        name: "Крепкий Кофе", // from +++ lore
+        alcohol: -6,
         ingredients: ["Какао-бобы 12", "Ведро молока 2"],
         effects: ["Регенерация I 2-5 сек", "Скорость I 30-140 сек"]
       }
@@ -756,7 +744,7 @@ const recipes = [
   },
   {
     baseName: "Яичный Коктейль",
-    type: "крепкий алкоголь",
+    type: "крепкий алкоголь", // Changed type from "крепкий алкоголь"
     icon: "icons/eggnog.png",
     originalAlcohol: 10,
     cookingtime: 2,
@@ -766,20 +754,8 @@ const recipes = [
     difficulty: 4,
     variations: [
       {
-        name: "Яичный Ликёр",
-        alcohol: 9,
-        ingredients: ["Яйцо 5", "Сахар 2", "Ведро молока 1"],
-        effects: []
-      },
-      {
-        name: "Яичный Коктейль",
+        name: "Яичный Коктейль", // No explicit + lore
         alcohol: 10,
-        ingredients: ["Яйцо 5", "Сахар 2", "Ведро молока 1"],
-        effects: []
-      },
-      {
-        name: "Адвокат",
-        alcohol: 11,
         ingredients: ["Яйцо 5", "Сахар 2", "Ведро молока 1"],
         effects: []
       }
@@ -787,9 +763,9 @@ const recipes = [
   },
   {
     baseName: "Золотая Водка",
-    type: "водка",
+    type: "крепкий алкоголь", // Changed from "водка" to "крепкий алкоголь"
     icon: "icons/g_vodka.png",
-    originalAlcohol: 20,
+    originalAlcohol: 22, // Corrected alcohol
     cookingtime: 18,
     distillruns: 3,
     age: 0,
@@ -797,20 +773,8 @@ const recipes = [
     difficulty: 6,
     variations: [
       {
-        name: "Протухшая Водка",
-        alcohol: 19,
-        ingredients: ["Картофель 10", "Золотой самородок 2"],
-        effects: ["Слабость I 28", "Отравление I 4"]
-      },
-      {
-        name: "Золотая Водка",
-        alcohol: 20,
-        ingredients: ["Картофель 10", "Золотой самородок 2"],
-        effects: ["Слабость I 28", "Отравление I 4"]
-      },
-      {
-        name: "Сверкающая Золотая Водка",
-        alcohol: 21,
+        name: "Золотая Водка", // No explicit lore for variations, using base name
+        alcohol: 22,
         ingredients: ["Картофель 10", "Золотой самородок 2"],
         effects: ["Слабость I 28", "Отравление I 4"]
       }
@@ -829,20 +793,14 @@ const recipes = [
     difficulty: 7,
     variations: [
       {
-        name: "Порошковый Виски",
-        alcohol: 27,
-        ingredients: ["Пшеница 10", "Огненный порошок 2"],
-        effects: []
-      },
-      {
-        name: "Горящий Виски",
+        name: "Горящий Виски", // No explicit + lore
         alcohol: 28,
         ingredients: ["Пшеница 10", "Огненный порошок 2"],
         effects: []
       },
       {
-        name: "Пылающий Виски",
-        alcohol: 29,
+        name: "Пылающий Виски", // From name
+        alcohol: 28,
         ingredients: ["Пшеница 10", "Огненный порошок 2"],
         effects: []
       }
@@ -850,7 +808,7 @@ const recipes = [
   },
   {
     baseName: "Горячий Шоколад",
-    type: "чай",
+    type: "напиток", // Changed type from 'чай' to 'напиток'
     icon: "icons/hot_choc.png",
     originalAlcohol: 0,
     cookingtime: 2,
@@ -869,7 +827,7 @@ const recipes = [
   },
   {
     baseName: "Ледяной Кофе",
-    type: "чай",
+    type: "напиток", // Changed type from 'чай' to 'напиток'
     icon: "icons/iced_coffee.png",
     originalAlcohol: -8,
     cookingtime: 1,
@@ -879,20 +837,8 @@ const recipes = [
     difficulty: 4,
     variations: [
       {
-        name: "Водянистый Кофе",
-        alcohol: 0,
-        ingredients: ["Печенье 8", "Снежок 4", "Ведро молока 1"],
-        effects: ["Регенерация I 30", "Скорость I 10"]
-      },
-      {
-        name: "Ледяной Кофе",
-        alcohol: 0,
-        ingredients: ["Печенье 8", "Снежок 4", "Ведро молока 1"],
-        effects: ["Регенерация I 30", "Скорость I 10"]
-      },
-      {
-        name: "Крепкий Ледяной Кофе",
-        alcohol: 0,
+        name: "Ледяной Кофе", // No explicit + lore
+        alcohol: -8,
         ingredients: ["Печенье 8", "Снежок 4", "Ведро молока 1"],
         effects: ["Регенерация I 30", "Скорость I 10"]
       }
@@ -911,8 +857,8 @@ const recipes = [
     difficulty: 3,
     variations: [
       {
-        name: "Паленый Самогон",
-        alcohol: 34,
+        name: "Паленый Самогон", // from + lore
+        alcohol: 35,
         ingredients: ["Картофель 12", "Сахарный тростник 4"],
         effects: ["Дезориентация I 20-60 сек", "Отравление I-0 10-30 сек", "Сила I 30-60 сек"]
       },
@@ -923,12 +869,73 @@ const recipes = [
         effects: ["Дезориентация I 20-60 сек", "Отравление I-0 10-30 сек", "Сила I 30-60 сек"]
       },
       {
-        name: "Крепкий Самогон",
-        alcohol: 36,
+        name: "Крепкий Самогон", // from +++ lore
+        alcohol: 35,
         ingredients: ["Картофель 12", "Сахарный тростник 4"],
         effects: ["Дезориентация I 20-60 сек", "Отравление I-0 10-30 сек", "Сила I 30-60 сек"]
       }
     ]
+  },
+  {
+    baseName: "Живчик с Яблоком",
+    type: "напиток",
+    icon: "icons/apple_zhuvchyk.png",
+    originalAlcohol: 0,
+    cookingtime: 2,
+    distillruns: 0,
+    age: 0,
+    wood: 0,
+    difficulty: 1,
+    variations: [
+      {
+        name: "Слегка кислый Живчик с Яблоком",
+        alcohol: 0,
+        ingredients: ["Яблоко 8", "Сахар 3"],
+        effects: ["Регенерация I 5-10 сек", "Скорость I 20-40 сек"]
+      },
+      {
+        name: "Освежающий Живчик с Яблоком",
+        alcohol: 0,
+        ingredients: ["Яблоко 8", "Сахар 3"],
+        effects: ["Регенерация I 5-10 сек", "Скорость I 20-40 сек"]
+      },
+      {
+        name: "Насыщенный, бодрящий Живчик с Яблоком",
+        alcohol: 0,
+        ingredients: ["Яблоко 8", "Сахар 3"],
+        effects: ["Регенерация I 5-10 сек", "Скорость I 20-40 сек"]
+      }
+    ]
+  },
+  {
+    baseName: "Живчик с Арбузом",
+    type: "напиток",
+    icon: "icons/watermelon_zhuvchyk.png",
+    originalAlcohol: 0,
+    cookingtime: 2,
+    distillruns: 0,
+    age: 0,
+    wood: 0,
+    difficulty: 1,
+    variations: [
+      {
+        name: "Водянистый Живчик с Арбузом",
+        alcohol: 0,
+        ingredients: ["Ломтик арбуза 8", "Сахар 3"],
+        effects: ["Насыщение I 10-15 сек", "Регенерация I 5-10 сек"]
+      },
+      {
+        name: "Сочный Живчик с Арбузом",
+        alcohol: 0,
+        ingredients: ["Ломтик арбуза 8", "Сахар 3"],
+        effects: ["Насыщение I 10-15 сек", "Регенерация I 5-10 сек"]
+      },
+      {
+        name: "Летний, освежающий Живчик с Арбузом",
+        alcohol: 0,
+        ingredients: ["Ломтик арбуза 8", "Сахар 3"],
+        effects: ["Насыщение I 10-15 сек", "Регенерация I 5-10 сек"]
+      }
+    ]
   }
 ];
-
