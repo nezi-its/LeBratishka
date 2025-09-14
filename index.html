@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Напитки LeBratishka</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Напитки LeBratishka</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>Рецепты напитков LeBratishka</h1>
-  <p>IP сервера: <span id="server-ip-host" title="Нажмите, чтобы скопировать IP-адрес">LeBratishka.aternos.me</span> Порт: <span id="server-ip-port" title="Нажмите, чтобы скопировать порт">58258</span></p>
-  <p class="game-version">Версия: <span id="game-version-text">1.21.100</span> (<a href="https://mcpehub.org/download-mcpe/14385-minecraft-1-21-100-06.html" target="_blank" rel="noopener noreferrer" title="Скачать Minecraft 1.21.100">Скачать</a>)</p>
-</header>
+  <header>
+    <h1>Рецепты напитков LeBratishka</h1>
+    <p>IP сервера: <span id="server-ip-host" title="Нажмите, чтобы скопировать IP-адрес">65.21.133.175</span> Порт: <span id="server-ip-port" title="Нажмите, чтобы скопировать порт">25576</span></p>
+    <p class="game-version">Версия: <span id="game-version-text">1.21.100</span> (<a href="https://mcpehub.org/download-mcpe/14385-minecraft-1-21-100-06.html" target="_blank" rel="noopener noreferrer" title="Скачать Minecraft 1.21.100">Скачать</a>)</p>
+  </header>
 
-<section id="filters">
-  <label>Фильтр по типу:
-    <select id="type-filter">
-      <option value="all">Все</option>
-      <option value="alcoholic">Алкогольные</option>
-      <option value="non-alcoholic">Безалкогольные</option>
-      <option value="strong-alcohol">Крепкие напитки (20%+)</option>
-      <option value="пиво">Пиво</option>
-      <option value="вино">Вино</option>
-      <option value="медовик">Медовик</option>
-      <option value="крепкий алкоголь">Крепкий алкоголь (общий)</option>
-      <option value="напиток">Напитки (безалкогольные)</option>
-      <option value="смузи">Смузи</option>
-      <option value="чай">Чай</option>
-      <option value="еда">Еда</option>
-    </select>
-  </label>
-</section>
+  <section id="filters">
+    <label>Фильтр по типу:
+      <select id="type-filter">
+        <option value="all">Все</option>
+        <option value="еда">Еда</option>        
+        <option value="пиво">Пиво</option>
+        <option value="вино">Вино</option>
+        <option value="смузи">Смузи</option>
+        <option value="медовик">Медовик</option>
+        <option value="alcoholic">Алкогольные</option>
+        <option value="non-alcoholic">Безалкогольные</option>
+        <option value="strong-alcohol">Крепкие напитки (20%+)</option>
+      </select>
+    </label>
+  </section>
 
-<section id="recipes-container"></section>
+  <section id="recipes-container"></section>
 
-<script src="recipes.js"></script>
-<script src="script.js"></script>
+  <div id="recipe-modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <div class="modal-header-content">
+        <h2 id="modal-name"></h2>
+        <img id="modal-icon" src="" alt="Иконка напитка">
+      </div>
+      <p><strong>Тип:</strong> <span id="modal-type"></span></p>
+      <p><strong>Алкоголь:</strong> <span id="modal-alcohol"></span></p>
+      <p><strong>Ингредиенты:</strong></p>
+      <ul id="modal-ingredients" class="ingredients-list"></ul>
+      <p><strong>Эффекты:</strong></p>
+      <ul id="modal-effects" class="effects-list"></ul>
+      <p><strong>Время варки:</strong> <span id="modal-cookingtime"></span> мин</p>
+      <p><strong>Количество перегонок:</strong> <span id="modal-distillruns"></span></p>
+      <p><strong>Время перегонки:</strong> <span id="modal-distilltime"></span></p>
+      <p><strong>Время выдержки:</strong> <span id="modal-age"></span> дней</p>
+      <p><strong>Тип бочки:</strong> <span id="modal-wood"></span></p>
+      <p><strong>Сложность:</strong> <span id="modal-difficulty"></span></p>
+    </div>
+  </div>
+
+  <script src="recipes.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
